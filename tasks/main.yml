@@ -229,8 +229,6 @@
       production: true
     become: true
     become_user: "{{ rocket_chat_service_user }}"
-    environment:
-      PATH: "{{ rocket_chat_node_prefix }}/bin:{{ ansible_env.PATH }}"
     tags: build
 
   - name: Ensure the Rocket.Chat log file symlink is present [Ubuntu 14]

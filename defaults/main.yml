@@ -23,12 +23,13 @@ rocket_chat_service_host: "{{ ansible_fqdn }}"
 rocket_chat_service_port: 3000
 rocket_chat_service_environment: {}
 rocket_chat_service_extra_instances: []
-rocket_chat_node_version: 8.11.4
-rocket_chat_node_prefix: /usr/local/n/versions/node/{{ rocket_chat_node_version }}
-rocket_chat_node_path: "{{ rocket_chat_node_prefix }}/bin/node"
-rocket_chat_npm_version: 6.4.1
-rocket_chat_npm_path: "{{ rocket_chat_node_prefix }}/bin/npm"
-rocket_chat_npm_dist: /usr/bin/npm
+
+# NodeJS settings
+rocket_chat_node_apt_key: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+rocket_chat_node_apt_repo: "deb https://deb.nodesource.com/node_{{ rocket_chat_node_version }}.x {{ ansible_distribution_release }} main"
+rocket_chat_node_version: 12
+rocket_chat_node_path: /usr/bin/node
+rocket_chat_npm_path: /usr/bin/npm
 
 # MongoDB settings
 rocket_chat_mongodb_packages: mongodb

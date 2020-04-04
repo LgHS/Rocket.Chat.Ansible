@@ -11,7 +11,6 @@ console log
 respawn
 respawn limit 10 5
 
-env NODE_BIN_DIR="{{ rocket_chat_node_prefix }}/bin"
 env NODE_PATH="/usr/local/lib/node_modules"
 env APPLICATION_PATH="{{ rocket_chat_application_path }}/bundle/main.js"
 
@@ -28,6 +27,5 @@ env {{ variable }}="{{ value }}"
 {% endfor -%}
 
 script
-    PATH=$NODE_BIN_DIR:$PATH
     node $APPLICATION_PATH
 end script
